@@ -54,8 +54,8 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
       rel="noopener noreferrer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`flex flex-col relative overflow-hidden rounded-[14px] border border-black/[0.08] bg-white transition-all duration-300 group h-full ${
-        hovered ? 'border-black/[0.14] shadow-xl shadow-black/[0.06]' : 'shadow-sm shadow-black/[0.02]'
+      className={`flex flex-col relative overflow-hidden rounded-[14px] border border-black/[0.08] dark:border-white/[0.08] bg-white dark:bg-[#161922] transition-all duration-300 group h-full ${
+        hovered ? 'border-black/[0.14] dark:border-white/[0.14] shadow-xl shadow-black/[0.06]' : 'shadow-sm shadow-black/[0.02]'
       }`}
       layout
       initial={{ opacity: 0, y: 16 }}
@@ -64,14 +64,14 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
       transition={{ duration: 0.35 }}
     >
       {/* Browser chrome bar */}
-      <div className="flex items-center gap-2 px-3.5 py-2 border-b border-black/[0.06] bg-[#fafafa] flex-shrink-0">
+      <div className="flex items-center gap-2 px-3.5 py-2 border-b border-black/[0.06] dark:border-white/[0.06] bg-[#fafafa] dark:bg-[#1e2130] flex-shrink-0">
         <div className="flex gap-[5px]">
           <div className="w-[10px] h-[10px] rounded-full bg-[#ff5f57]" />
           <div className="w-[10px] h-[10px] rounded-full bg-[#febc2e]" />
           <div className="w-[10px] h-[10px] rounded-full bg-[#28c840]" />
         </div>
         <div className="flex-1 mx-1.5">
-          <div className="bg-white rounded-lg px-3 py-[5px] text-[11px] font-mono text-[#6b7280] truncate border border-black/[0.06] flex items-center gap-2">
+          <div className="bg-white dark:bg-[#0f1117] rounded-lg px-3 py-[5px] text-[11px] font-mono text-[#6b7280] dark:text-[#9ca3af] truncate border border-black/[0.06] dark:border-white/[0.06] flex items-center gap-2">
             <Lock size={9} className="text-[#9ca3af] flex-shrink-0" />
             <FaviconImg item={item} size={14} />
             <span className="truncate">{domain}</span>
@@ -104,7 +104,6 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
             className="w-full h-full flex items-center justify-center relative"
             style={{ background: `linear-gradient(135deg, ${item.color}08 0%, ${item.color}03 100%)` }}
           >
-            {/* Grid pattern */}
             <div
               className="absolute inset-0 opacity-[0.04]"
               style={{
@@ -112,25 +111,18 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
                 backgroundSize: '24px 24px',
               }}
             />
-            {/* Large centered favicon */}
-            <div className="relative">
-              <div
-                className="w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg"
-                style={{ background: item.color, boxShadow: `0 8px 32px ${item.color}30` }}
-              >
-                <FaviconImg item={item} size={36} className="rounded-lg" />
-              </div>
+            <div className="relative w-14 h-14 rounded-2xl bg-black/5 dark:bg-white/10 backdrop-blur-sm flex items-center justify-center shadow-sm">
+              <FaviconImg item={item} size={36} className="rounded-lg" />
             </div>
-            {/* Floating domain pill */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2">
-              <div className="px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-black/[0.06] text-[10px] font-mono text-[#6b7280]">
+              <div className="px-3 py-1 rounded-full bg-white/80 dark:bg-[#0f1117]/80 backdrop-blur-sm border border-black/[0.06] dark:border-white/[0.06] text-[10px] font-mono text-[#6b7280] dark:text-[#9ca3af]">
                 {domain}
               </div>
             </div>
           </div>
         )}
 
-        {/* Status badge overlaid on image */}
+        {/* Status badge */}
         <div className="absolute top-3 right-3">
           <div
             className="flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider backdrop-blur-md"
@@ -148,9 +140,9 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
           </div>
         </div>
 
-        {/* Category label overlaid */}
+        {/* Category label */}
         <div className="absolute top-3 left-3">
-          <div className="px-2 py-0.5 rounded-md bg-white/80 backdrop-blur-md border border-black/[0.06] text-[9px] font-mono text-[#6b7280] uppercase tracking-wider font-semibold">
+          <div className="px-2 py-0.5 rounded-md bg-white/80 dark:bg-[#0f1117]/80 backdrop-blur-md border border-black/[0.06] dark:border-white/[0.06] text-[9px] font-mono text-[#6b7280] dark:text-[#9ca3af] uppercase tracking-wider font-semibold">
             {categoryLabels[item.category]}
           </div>
         </div>
@@ -159,39 +151,32 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
       {/* Content */}
       <div className={`relative ${large ? 'p-5' : 'p-4'} flex flex-col justify-between flex-1`}>
         <div className="flex-1">
-          {/* Title row with favicon */}
           <div className="flex items-center gap-2.5 mb-2">
-            <div
-              className="w-8 h-8 rounded-[10px] flex items-center justify-center flex-shrink-0 overflow-hidden border border-black/[0.06]"
-              style={{ background: `${item.color}08` }}
-            >
-              <FaviconImg item={item} size={18} />
+            <div className="w-8 h-8 flex items-center justify-center flex-shrink-0 overflow-hidden">
+              <FaviconImg item={item} size={24} />
             </div>
             <div className="min-w-0">
-              <h3 className={`font-display font-bold text-[#0f172a] leading-tight truncate ${large ? 'text-[17px]' : 'text-[14px]'}`}>
+              <h3 className={`font-display font-bold text-[#0f172a] dark:text-[#f1f5f9] leading-tight truncate ${large ? 'text-[17px]' : 'text-[14px]'}`}>
                 {item.name}
               </h3>
               <p className="text-[11px] text-[#9ca3af] truncate">{item.tagline}</p>
             </div>
           </div>
 
-          {/* OG description */}
-          <p className={`text-[#6b7280] leading-relaxed mb-3 ${large ? 'text-[13px] line-clamp-3' : 'text-[12px] line-clamp-2'}`}>
+          <p className={`text-[#6b7280] dark:text-[#9ca3af] leading-relaxed mb-3 ${large ? 'text-[13px] line-clamp-3' : 'text-[12px] line-clamp-2'}`}>
             {item.ogDescription}
           </p>
 
-          {/* Tech tags */}
           <div className="flex flex-wrap gap-1">
             {item.tech.map((t, i) => (
-              <span key={i} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-[#f3f4f6] text-[#6b7280] border border-black/[0.04]">
+              <span key={i} className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-[#f3f4f6] dark:bg-[#1e2130] text-[#6b7280] dark:text-[#9ca3af] border border-black/[0.04] dark:border-white/[0.04]">
                 {t}
               </span>
             ))}
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="mt-3 pt-2.5 flex items-center justify-between" style={{ borderTop: '1px solid rgba(0,0,0,0.04)' }}>
+        <div className="mt-3 pt-2.5 flex items-center justify-between border-t border-black/[0.04] dark:border-white/[0.04]">
           <div className="flex items-center gap-1.5 text-[#9ca3af]">
             <Globe size={10} />
             <span className="font-mono text-[10px]">{domain}</span>
@@ -221,12 +206,12 @@ const Showcase: React.FC = () => {
   };
 
   return (
-    <section id="showcase" className="py-16 px-6" style={{ borderBottom: '1px solid rgba(0,0,0,0.06)' }}>
+    <section id="showcase" className="py-16 px-6 border-b border-black/[0.06] dark:border-white/[0.06]">
       <div className="max-w-[980px] mx-auto">
         <ScrollReveal>
           <div className="section-label">04 &mdash; Showcase</div>
-          <h2 className="section-title">Sites & platforms I've built</h2>
-          <p className="section-sub">
+          <h2 className="section-title dark:text-[#f1f5f9]">Sites & platforms I've built</h2>
+          <p className="section-sub dark:text-[#9ca3af]">
             {showcase.length} live products, client sites, and tools — each one designed, built, and shipped.
           </p>
         </ScrollReveal>
@@ -240,12 +225,12 @@ const Showcase: React.FC = () => {
                 onClick={() => setFilter(opt.value)}
                 className={`px-3.5 py-1.5 rounded-lg text-[12px] font-semibold transition-all ${
                   filter === opt.value
-                    ? 'bg-[#0f172a] text-white'
-                    : 'bg-[#f0f1f5] text-[#6b7280] hover:bg-[#e5e7eb] hover:text-[#0f172a]'
+                    ? 'bg-[#0f172a] dark:bg-[#f1f5f9] text-white dark:text-[#0f172a]'
+                    : 'bg-[#f0f1f5] dark:bg-[#1e2130] text-[#6b7280] dark:text-[#9ca3af] hover:bg-[#e5e7eb] dark:hover:bg-[#262a3a] hover:text-[#0f172a] dark:hover:text-[#f1f5f9]'
                 }`}
               >
                 {opt.label}
-                <span className={`ml-1.5 text-[10px] ${filter === opt.value ? 'text-white/60' : 'text-[#9ca3af]'}`}>
+                <span className={`ml-1.5 text-[10px] ${filter === opt.value ? 'text-white/60 dark:text-[#0f172a]/60' : 'text-[#9ca3af]'}`}>
                   {counts[opt.value]}
                 </span>
               </button>
@@ -253,7 +238,6 @@ const Showcase: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        {/* Featured bento grid */}
         {featured.length > 0 && (
           <div className="grid md:grid-cols-2 gap-4 mb-4">
             {featured.map((item) => (
@@ -262,7 +246,6 @@ const Showcase: React.FC = () => {
           </div>
         )}
 
-        {/* Rest in compact grid */}
         {rest.length > 0 && (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {rest.map((item) => (
@@ -273,22 +256,22 @@ const Showcase: React.FC = () => {
 
         {/* Stats footer */}
         <ScrollReveal delay={0.15}>
-          <div className="mt-8 pt-6 flex flex-wrap items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+          <div className="mt-8 pt-6 flex flex-wrap items-center justify-between gap-4 border-t border-black/[0.06] dark:border-white/[0.06]">
             <div className="flex items-center gap-6">
               <div>
-                <div className="font-display text-2xl font-extrabold text-[#0f172a]">{showcase.length}</div>
+                <div className="font-display text-2xl font-extrabold text-[#0f172a] dark:text-[#f1f5f9]">{showcase.length}</div>
                 <div className="text-[11px] text-[#9ca3af] font-mono uppercase tracking-wider">Sites live</div>
               </div>
-              <div className="w-px h-8 bg-black/[0.06]" />
+              <div className="w-px h-8 bg-black/[0.06] dark:bg-white/[0.06]" />
               <div>
-                <div className="font-display text-2xl font-extrabold text-[#0f172a]">
+                <div className="font-display text-2xl font-extrabold text-[#0f172a] dark:text-[#f1f5f9]">
                   {showcase.filter(s => s.category === 'saas').length}
                 </div>
                 <div className="text-[11px] text-[#9ca3af] font-mono uppercase tracking-wider">SaaS products</div>
               </div>
-              <div className="w-px h-8 bg-black/[0.06]" />
+              <div className="w-px h-8 bg-black/[0.06] dark:bg-white/[0.06]" />
               <div>
-                <div className="font-display text-2xl font-extrabold text-[#0f172a]">
+                <div className="font-display text-2xl font-extrabold text-[#0f172a] dark:text-[#f1f5f9]">
                   {showcase.filter(s => s.category === 'client').length}
                 </div>
                 <div className="text-[11px] text-[#9ca3af] font-mono uppercase tracking-wider">Client sites</div>
@@ -298,7 +281,7 @@ const Showcase: React.FC = () => {
               href="https://github.com/ryantetro"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-ghost text-[13px] px-4 py-2"
+              className="btn-ghost text-[13px] px-4 py-2 dark:text-[#f1f5f9] dark:border-white/[0.12] dark:hover:bg-[#161922]"
             >
               View on GitHub &rarr;
             </a>

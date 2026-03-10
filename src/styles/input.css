@@ -6,8 +6,6 @@
 @layer base {
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html { scroll-behavior: smooth; }
-
   body {
     font-family: 'DM Sans', sans-serif;
     background: #ffffff;
@@ -20,6 +18,12 @@
     min-height: 100vh;
   }
 
+  .dark body,
+  html.dark body {
+    background: #0f1117;
+    color: #f1f5f9;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Sora', sans-serif;
     font-weight: 700;
@@ -28,11 +32,16 @@
     color: #0f172a;
   }
 
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #f1f5f9;
+  }
+
   h1 { font-size: clamp(32px, 5vw, 52px); font-weight: 800; }
   h2 { font-size: clamp(22px, 3vw, 30px); letter-spacing: -0.02em; line-height: 1.2; }
   h3 { font-size: clamp(16px, 2vw, 20px); letter-spacing: -0.01em; }
 
   p { color: #6b7280; line-height: 1.7; font-size: 15px; }
+  .dark p { color: #9ca3af; }
 
   a {
     color: inherit;
@@ -61,6 +70,7 @@
     margin-bottom: 8px;
     line-height: 1.2;
   }
+  .dark .section-title { color: #f1f5f9; }
 
   .section-sub {
     color: #6b7280;
@@ -69,6 +79,7 @@
     font-size: 15px;
     line-height: 1.7;
   }
+  .dark .section-sub { color: #9ca3af; }
 
   .card {
     background: #f8f9fb;
@@ -76,12 +87,20 @@
     border-radius: 14px;
     padding: 28px;
   }
+  .dark .card {
+    background: #161922;
+    border-color: rgba(255,255,255,0.06);
+  }
 
   .card-sm {
     background: #f8f9fb;
     border: 1px solid rgba(0,0,0,0.08);
     border-radius: 8px;
     padding: 20px 22px;
+  }
+  .dark .card-sm {
+    background: #161922;
+    border-color: rgba(255,255,255,0.06);
   }
 
   .rule-card {
@@ -91,6 +110,10 @@
     padding: 24px 26px;
     position: relative;
     overflow: hidden;
+  }
+  .dark .rule-card {
+    background: #161922;
+    border-color: rgba(255,255,255,0.06);
   }
 
   .rule-card::before {
@@ -102,6 +125,7 @@
     border-radius: 3px;
   }
 
+  /* #3 — Button hover polish: lift + shadow instead of just opacity fade */
   .btn-primary {
     background: #1d4ed8;
     color: #fff;
@@ -112,11 +136,18 @@
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    transition: opacity 0.15s;
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.15s;
     display: inline-block;
     text-align: center;
   }
-  .btn-primary:hover { opacity: 0.88; }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(29,78,216,0.3);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(29,78,216,0.2);
+  }
 
   .btn-ghost {
     background: transparent;
@@ -128,11 +159,26 @@
     border-radius: 8px;
     border: 1px solid rgba(0,0,0,0.12);
     cursor: pointer;
-    transition: border-color 0.15s, background 0.15s;
+    transition: border-color 0.15s, background 0.15s, transform 0.2s, box-shadow 0.2s;
     display: inline-block;
     text-align: center;
   }
-  .btn-ghost:hover { border-color: rgba(0,0,0,0.25); background: #f8f9fb; }
+  .btn-ghost:hover {
+    border-color: rgba(0,0,0,0.25);
+    background: #f8f9fb;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .btn-ghost:active { transform: translateY(0); }
+  .dark .btn-ghost {
+    color: #f1f5f9;
+    border-color: rgba(255,255,255,0.12);
+  }
+  .dark .btn-ghost:hover {
+    border-color: rgba(255,255,255,0.25);
+    background: #161922;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
 
   .tag {
     display: inline-block;
@@ -143,6 +189,11 @@
     background: #f0f1f5;
     border: 1px solid rgba(0,0,0,0.06);
     color: #6b7280;
+  }
+  .dark .tag {
+    background: #1e2130;
+    border-color: rgba(255,255,255,0.06);
+    color: #9ca3af;
   }
 
   .badge {
@@ -159,6 +210,10 @@
     padding: 5px 12px;
     border-radius: 100px;
   }
+  .dark .badge {
+    background: rgba(29,78,216,0.15);
+    border-color: rgba(29,78,216,0.3);
+  }
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -166,7 +221,12 @@
 ::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #d1d5db; }
 
+.dark ::-webkit-scrollbar-track { background: #0f1117; }
+.dark ::-webkit-scrollbar-thumb { background: #2a2d3a; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #3a3d4a; }
+
 ::selection { background: rgba(29,78,216,0.15); color: #0f172a; }
+.dark ::selection { color: #f1f5f9; }
 
 *:focus-visible { outline: 2px solid #1d4ed8; outline-offset: 2px; }
 

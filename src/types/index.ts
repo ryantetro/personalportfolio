@@ -10,6 +10,18 @@ export interface Profile {
   education: string;
   work: string;
   avatar?: string;
+  availability?: {
+    status: 'available' | 'busy' | 'open';
+    message: string;
+  };
+}
+
+export interface ProjectCaseStudyData {
+  problem: string;
+  approach: string;
+  solution: string;
+  results?: { metric: string; label: string }[];
+  techDecisions?: { title: string; description: string }[];
 }
 
 export interface Project {
@@ -24,6 +36,8 @@ export interface Project {
   github?: string;
   featured: boolean;
   status?: 'completed' | 'in-progress' | 'planned';
+  slug?: string;
+  caseStudy?: ProjectCaseStudyData;
 }
 
 export interface Skills {
@@ -248,4 +262,15 @@ export interface ThemeConfig {
       easeInOut: string;
     };
   };
+}
+
+// Blog types
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  date: string;
+  readingTime: string;
+  content: string;
 }

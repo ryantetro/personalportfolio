@@ -11,15 +11,28 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Ryan Tetro — Software Engineer & Startup Founder" />
     <meta property="og:description" content="I build AI-powered products from zero to one. From architecting full-stack platforms to leading startup teams." />
-    <meta property="og:image" content="/avatar.png" />
+    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Ryan Tetro — Software Engineer & Startup Founder" />
     <meta name="twitter:description" content="I build AI-powered products from zero to one." />
+    <meta name="twitter:image" content="/og-image.png" />
 
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>R</text></svg>" />
     <meta name="theme-color" content="#ffffff" />
+
+    <!-- Prevent flash of wrong theme -->
+    <script>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

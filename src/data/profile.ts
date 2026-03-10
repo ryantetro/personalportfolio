@@ -9,5 +9,9 @@ export const profile: Profile = {
   tags: ["React", "Next.js", "TypeScript", "Python", "AI / ML", "PostgreSQL", "AWS"],
   education: "M.S. Information Systems — Brigham Young University",
   work: "PostGame AI — Founder & Software Engineer",
-  avatar: "/DFF8EECF-D803-4286-A27F-B28AF82F8E24_1_105_c.jpeg"
+  avatar: "/DFF8EECF-D803-4286-A27F-B28AF82F8E24_1_105_c.jpeg",
+  availability: {
+    status: 'available',
+    message: 'Open to full-time roles & startup collaborations',
+  },
 };
