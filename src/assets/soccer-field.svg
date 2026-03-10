@@ -1,0 +1,23 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="soccer-field" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <!-- Field lines -->
+      <line x1="0" y1="50" x2="100" y2="50" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <line x1="50" y1="0" x2="50" y2="100" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      
+      <!-- Corner arcs -->
+      <circle cx="0" cy="0" r="10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="100" cy="0" r="10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="0" cy="100" r="10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <circle cx="100" cy="100" r="10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      
+      <!-- Center circle -->
+      <circle cx="50" cy="50" r="20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      
+      <!-- Goal areas -->
+      <rect x="0" y="35" width="15" height="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      <rect x="85" y="35" width="15" height="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#soccer-field)"/>
+</svg>
