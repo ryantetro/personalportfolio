@@ -23,7 +23,7 @@ const Navigation: React.FC = () => {
   }, []);
 
   // #1 — Active section highlighting via IntersectionObserver
-  const sectionIds = ['about', 'experience', 'projects', 'showcase', 'skills', 'writing', 'contact'];
+  const sectionIds = ['about', 'experience', 'case-studies', 'showcase', 'skills', 'writing', 'contact'];
 
   const handleIntersect = useCallback((entries: IntersectionObserverEntry[]) => {
     const visible = entries
@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
   const links = [
     { id: 'about', label: 'About' },
     { id: 'experience', label: 'Experience' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'case-studies', label: 'Case Studies' },
     { id: 'showcase', label: 'Showcase' },
     { id: 'skills', label: 'Skills' },
     { id: 'writing', label: 'Writing' },

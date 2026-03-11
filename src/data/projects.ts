@@ -12,22 +12,6 @@ export const projects: Project[] = [
     featured: true,
     status: "in-progress",
     slug: "postgame-ai",
-    caseStudy: {
-      problem: "Youth sports coaches spend hours writing individual feedback that athletes barely read. The feedback loop between coach observation and athlete improvement is broken — coaches observe in real-time but document later, losing critical nuance and context.",
-      approach: "Instead of building another form-based feedback tool, I focused on the coach's natural behavior: talking. The core insight was that coaches already give verbal feedback — they just need a way to capture and structure it automatically.",
-      solution: "Built a platform where coaches record 30-second voice memos per athlete. OpenAI's Whisper API transcribes the audio, then GPT-4 structures it into actionable insights with specific drills, progress tracking, and performance trends. Athletes get a clean dashboard with their personalized development plan.",
-      results: [
-        { metric: "30s", label: "Average feedback time per athlete" },
-        { metric: "85%", label: "Athlete engagement rate" },
-        { metric: "3x", label: "More feedback given vs. written" },
-        { metric: "12", label: "Teams in beta" },
-      ],
-      techDecisions: [
-        { title: "Supabase over Firebase", description: "PostgreSQL with Row Level Security gave us relational data modeling for teams/athletes/sessions while keeping auth and real-time subscriptions simple." },
-        { title: "Edge Functions for AI Pipeline", description: "Audio processing runs on Supabase Edge Functions to keep latency low and avoid cold starts that Lambda would introduce." },
-        { title: "Streaming Responses", description: "AI-generated insights stream to the client using Server-Sent Events, giving coaches immediate feedback that the system is working." },
-      ],
-    },
   },
   {
     id: 2,
@@ -40,22 +24,6 @@ export const projects: Project[] = [
     featured: true,
     status: "completed",
     slug: "soar-lead-gen",
-    caseStudy: {
-      problem: "Traditional lead generation relies on keyword matching and rigid filters, missing high-quality prospects that describe their needs differently. Sales teams waste hours sifting through irrelevant leads while ideal customers slip through the cracks.",
-      approach: "Applied semantic search using vector embeddings to understand the meaning behind lead descriptions rather than just matching keywords. Built a pipeline that embeds company descriptions and matches them against ideal customer profiles using cosine similarity.",
-      solution: "Engineered a serverless platform on AWS Lambda with DynamoDB for lead storage and Pinecone for vector search. The system processes incoming leads through an embedding pipeline, scores them against configurable ICP vectors, and surfaces ranked results with explanations of why each lead matches.",
-      results: [
-        { metric: "40%", label: "Improvement in lead quality score" },
-        { metric: "3x", label: "Faster lead qualification" },
-        { metric: "10K+", label: "Leads processed daily" },
-        { metric: "<200ms", label: "Average search latency" },
-      ],
-      techDecisions: [
-        { title: "Pinecone for Vector Storage", description: "Managed vector database eliminated the operational overhead of self-hosting while providing fast approximate nearest neighbor search at scale." },
-        { title: "Serverless Architecture", description: "AWS Lambda with DynamoDB scaled to zero when idle and handled spikes without capacity planning — critical for a product with unpredictable usage patterns." },
-        { title: "OpenAI text-embedding-3-small", description: "Chose the small embedding model for the best balance of quality and cost at high volume, with the option to upgrade to large for specific high-value queries." },
-      ],
-    },
   },
   {
     id: 3,
@@ -80,21 +48,6 @@ export const projects: Project[] = [
     featured: true,
     status: "completed",
     slug: "ai-analysis-modules",
-    caseStudy: {
-      problem: "Enterprise customers needed real-time analysis of organizational data but existing tools required manual configuration and data science expertise. Non-technical users couldn't extract insights without engineering support.",
-      approach: "Designed modular AI analysis components that could be configured through a simple interface. Each module encapsulates a specific analysis pattern (trend detection, anomaly flagging, summarization) and exposes it through a consistent API.",
-      solution: "Built a library of Python ML modules that plug into Soar's platform. Each module handles data ingestion, processing, and insight generation autonomously. Customers configure modules through a no-code interface, and results stream into their existing dashboards.",
-      results: [
-        { metric: "Daily", label: "Active usage by customers" },
-        { metric: "6", label: "Reusable AI modules shipped" },
-        { metric: "80%", label: "Reduction in analysis setup time" },
-        { metric: "0", label: "Data science expertise required" },
-      ],
-      techDecisions: [
-        { title: "Module Architecture", description: "Each AI module follows a consistent interface pattern — ingest, process, output — making it easy to compose complex analysis workflows from simple building blocks." },
-        { title: "Python + FastAPI", description: "Python's ML ecosystem (pandas, scikit-learn, OpenAI SDK) paired with FastAPI's async performance made it ideal for real-time analysis endpoints." },
-      ],
-    },
   },
   {
     id: 5,

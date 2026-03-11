@@ -1,9 +1,10 @@
 import React from 'react';
 
 interface MarkdownNode {
-  type: 'heading' | 'paragraph' | 'code' | 'codeblock';
+  type: 'heading' | 'paragraph' | 'code' | 'codeblock' | 'list';
   level?: number;
   content: string;
+  items?: string[];
 }
 
 function parseMarkdown(md: string): MarkdownNode[] {
@@ -36,6 +37,18 @@ function parseMarkdown(md: string): MarkdownNode[] {
         content: headingMatch[2],
       });
       i++;
+      continue;
+    }
+
+    // Unordered list
+    if (line.trim().startsWith('- ')) {
+      const items: string[] = [line.trim().slice(2)];
+      i++;
+      while (i < lines.length && lines[i].trim().startsWith('- ')) {
+        items.push(lines[i].trim().slice(2));
+        i++;
+      }
+      nodes.push({ type: 'list', content: '', items });
       continue;
     }
 
@@ -100,6 +113,18 @@ export function renderMarkdown(md: string): React.ReactNode[] {
       }
       case 'paragraph':
         return React.createElement('p', { key: i, className: 'text-[#6b7280] dark:text-[#9ca3af] leading-relaxed mb-4' }, renderInline(node.content));
+      case 'list':
+        return React.createElement(
+          'ul',
+          { key: i, className: 'list-disc pl-5 mb-5 space-y-2 text-[#6b7280] dark:text-[#9ca3af]' },
+          node.items?.map((item, itemIndex) =>
+            React.createElement(
+              'li',
+              { key: itemIndex, className: 'pl-1 leading-relaxed' },
+              renderInline(item)
+            )
+          )
+        );
       case 'codeblock':
         return React.createElement(
           'pre',

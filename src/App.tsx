@@ -1,8 +1,8 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
-import ProjectCaseStudy from './pages/ProjectCaseStudy';
+import CaseStudyPage from './pages/CaseStudyPage';
 import BlogPostPage from './pages/BlogPost';
 import './styles/input.css';
 
@@ -11,7 +11,8 @@ const App: React.FC = () => {
     <Routes>
       <Route element={<MainLayout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/project/:slug" element={<ProjectCaseStudy />} />
+        <Route path="/case-study/:slug" element={<CaseStudyPage />} />
+        <Route path="/project/:slug" element={<Navigate to="/" replace />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
       </Route>
     </Routes>

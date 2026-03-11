@@ -64,8 +64,8 @@ const Hero: React.FC = () => {
 
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <MagneticButton>
-                  <a href="#projects" className="btn-primary inline-flex items-center gap-2">
-                    See my work <ArrowRight size={14} />
+                  <a href="#case-studies" className="btn-primary inline-flex items-center gap-2">
+                    Read the stories <ArrowRight size={14} />
                   </a>
                 </MagneticButton>
                 <MagneticButton>

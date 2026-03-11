@@ -2,7 +2,7 @@ import React from 'react';
 import Hero from '../sections/Hero';
 import About from '../sections/About';
 import Experience from '../sections/Experience';
-import Projects from '../sections/Projects';
+import CaseStudies from '../sections/Projects';
 import Showcase from '../sections/Showcase';
 import Skills from '../sections/Skills';
 import Blog from '../sections/Blog';
@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
       <Hero />
       <About />
       <Experience />
-      <Projects />
+      <CaseStudies />
       <Showcase />
       <Skills />
       <Blog />

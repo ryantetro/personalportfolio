@@ -16,14 +16,6 @@ export interface Profile {
   };
 }
 
-export interface ProjectCaseStudyData {
-  problem: string;
-  approach: string;
-  solution: string;
-  results?: { metric: string; label: string }[];
-  techDecisions?: { title: string; description: string }[];
-}
-
 export interface Project {
   id: number;
   category: string;
@@ -37,7 +29,42 @@ export interface Project {
   featured: boolean;
   status?: 'completed' | 'in-progress' | 'planned';
   slug?: string;
-  caseStudy?: ProjectCaseStudyData;
+}
+
+export interface CaseStudyFact {
+  label: string;
+  value: string;
+}
+
+export interface CaseStudyCallout {
+  label: string;
+  text: string;
+}
+
+export interface CaseStudyImageSlot {
+  title: string;
+  caption: string;
+  layout?: 'wide' | 'square';
+  src?: string;
+  alt?: string;
+}
+
+export interface CaseStudy {
+  id: number;
+  slug: string;
+  category: string;
+  title: string;
+  kicker: string;
+  subtitle: string;
+  description: string;
+  summary: string;
+  readingTime: string;
+  highlight: string;
+  tags: string[];
+  facts: CaseStudyFact[];
+  callouts?: CaseStudyCallout[];
+  imageSlots?: CaseStudyImageSlot[];
+  content: string;
 }
 
 export interface Skills {
@@ -210,9 +237,9 @@ export interface ToolResponse {
 }
 
 // Utility types
-export type SectionType = 'hero' | 'me' | 'projects' | 'skills' | 'fun' | 'contact';
+export type SectionType = 'hero' | 'me' | 'case-studies' | 'skills' | 'fun' | 'contact';
 
-export type QuickActionType = 'me' | 'projects' | 'skills' | 'fun' | 'contact';
+export type QuickActionType = 'me' | 'case-studies' | 'skills' | 'fun' | 'contact';
 
 export interface QuickAction {
   type: QuickActionType;

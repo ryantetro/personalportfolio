@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Github, Linkedin, Twitter, Heart } from 'lucide-react';
@@ -14,6 +14,18 @@ const footerIconMap: Record<string, React.ElementType> = {
 
 const MainLayout: React.FC = () => {
   const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.slice(1);
+      requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return;
+    }
+
+    window.scrollTo(0, 0);
+  }, [location.hash, location.pathname]);
 
   return (
     <div className="min-h-screen bg-white dark:bg-[#0f1117] transition-colors duration-300">
