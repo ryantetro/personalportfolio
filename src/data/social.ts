@@ -3,7 +3,7 @@ import { SocialLink, ContactInfo } from '../types';
 export const socialLinks: SocialLink[] = [
   {
     platform: "LinkedIn",
-    url: "https://linkedin.com/in/ryantetro",
+    url: "https://www.linkedin.com/in/ryan-tetro/",
     icon: "linkedin",
     label: "LinkedIn Profile"
   },
@@ -14,10 +14,10 @@ export const socialLinks: SocialLink[] = [
     label: "GitHub Profile"
   },
   {
-    platform: "Twitter",
-    url: "https://twitter.com/ryantetro",
+    platform: "X",
+    url: "https://x.com/ryan_tetro",
     icon: "twitter",
-    label: "Twitter Profile"
+    label: "X Profile"
   }
 ];
 

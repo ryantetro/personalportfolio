@@ -54,8 +54,8 @@ const Hero: React.FC = () => {
               )}
 
               <h1 className="mb-4 dark:text-[#f1f5f9]">
-                I'm Ryan Tetro.<br />
-                <span className="text-primary">I build what's next.</span>
+                Software engineer &<br />
+                <span className="text-primary">startup founder.</span>
               </h1>
 
               <p className="max-w-[520px] text-[#6b7280] dark:text-[#9ca3af] text-base leading-relaxed mb-8">
@@ -64,8 +64,8 @@ const Hero: React.FC = () => {
 
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <MagneticButton>
-                  <a href="#case-studies" className="btn-primary inline-flex items-center gap-2">
-                    Read the stories <ArrowRight size={14} />
+                  <a href="#showcase" className="btn-primary inline-flex items-center gap-2">
+                    See my work <ArrowRight size={14} />
                   </a>
                 </MagneticButton>
                 <MagneticButton>

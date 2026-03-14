@@ -209,7 +209,7 @@ const Showcase: React.FC = () => {
     <section id="showcase" className="py-16 px-6 border-b border-black/[0.06] dark:border-white/[0.06]">
       <div className="max-w-[980px] mx-auto">
         <ScrollReveal>
-          <div className="section-label">04 &mdash; Showcase</div>
+          <div className="section-label">03 &mdash; Showcase</div>
           <h2 className="section-title dark:text-[#f1f5f9]">Sites & platforms I've built</h2>
           <p className="section-sub dark:text-[#9ca3af]">
             {showcase.length} live products, client sites, and tools — each one designed, built, and shipped.

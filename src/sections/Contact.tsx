@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
       <div className="max-w-[980px] mx-auto">
         {/* #10 — Break the section header pattern: Contact uses a bigger, more direct headline */}
         <ScrollReveal>
-          <div className="section-label">07 &mdash; Contact</div>
+          <div className="section-label">05 &mdash; Contact</div>
           <h2 className="font-display text-3xl md:text-4xl font-extrabold text-[#0f172a] dark:text-[#f1f5f9] mb-3 leading-tight">
             Let's build something<br /><span className="text-primary">together.</span>
           </h2>

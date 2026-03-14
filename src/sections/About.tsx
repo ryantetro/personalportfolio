@@ -85,6 +85,9 @@ const About: React.FC = () => {
               <p className="text-[#1a1d27] dark:text-[#e2e8f0] leading-relaxed mb-4">
                 I'm drawn to the intersection of AI and real-world problems. Whether it's turning coach audio into athlete insights at PostGame AI, or building semantic search at Soar, I care most about shipping software that makes a measurable difference.
               </p>
+              <p className="text-[#1a1d27] dark:text-[#e2e8f0] leading-relaxed mb-4">
+                I played college soccer at BYU and love all things sports — wake surfing, coaching, anything that gets me moving. Off the keyboard, you'll usually find me on the field or the water.
+              </p>
               <p className="text-[#6b7280] dark:text-[#9ca3af] leading-relaxed">
                 Currently pursuing an <strong className="text-[#0f172a] dark:text-[#f1f5f9] font-semibold">M.S. in Information Systems</strong> at{' '}
                 <strong className="text-[#0f172a] dark:text-[#f1f5f9] font-semibold">BYU Marriott School of Business</strong> and a recipient of the{' '}
