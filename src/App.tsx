@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import CaseStudyPage from './pages/CaseStudyPage';
@@ -8,14 +9,17 @@ import './styles/input.css';
 
 const App: React.FC = () => {
   return (
-    <Routes>
-      <Route element={<MainLayout />}>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/case-study/:slug" element={<CaseStudyPage />} />
-        <Route path="/project/:slug" element={<Navigate to="/" replace />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
-      </Route>
-    </Routes>
+    <>
+      <Routes>
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/case-study/:slug" element={<CaseStudyPage />} />
+          <Route path="/project/:slug" element={<Navigate to="/" replace />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
+        </Route>
+      </Routes>
+      <Analytics />
+    </>
   );
 };
 
