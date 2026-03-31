@@ -83,7 +83,7 @@ const About: React.FC = () => {
             <div>
               {/* #8 — Differentiated bio text from Hero */}
               <p className="text-[#1a1d27] dark:text-[#e2e8f0] leading-relaxed mb-4">
-                I'm drawn to the intersection of AI and real-world problems. Whether it's turning coach audio into athlete insights at PostGame AI, or building semantic search at Soar, I care most about shipping software that makes a measurable difference.
+                I'm an AI-native developer focused on building practical software that solves real-world problems. I move quickly from idea to shipped product, combining product thinking, strong engineering, and AI workflows to create tools people actually use.
               </p>
               <p className="text-[#1a1d27] dark:text-[#e2e8f0] leading-relaxed mb-4">
                 I played college soccer at BYU and love all things sports — wake surfing, coaching, anything that gets me moving. Off the keyboard, you'll usually find me on the field or the water.
@@ -116,7 +116,7 @@ const About: React.FC = () => {
                   <Rocket size={14} className="text-primary" />
                   <div className="font-mono text-[11px] uppercase tracking-wider text-primary">Current Focus</div>
                 </div>
-                <div className="text-[#1a1d27] dark:text-[#f1f5f9] text-sm font-medium">PostGame AI, Soar, Utah Innovation Fund</div>
+                <div className="text-[#1a1d27] dark:text-[#f1f5f9] text-sm font-medium">PostGame AI, AIRadr</div>
               </div>
             </div>
           </div>
