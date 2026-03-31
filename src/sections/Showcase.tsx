@@ -46,6 +46,7 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
   const [ogErr, setOgErr] = useState(false);
   const domain = item.url.replace('https://', '').replace('http://', '');
   const hasOgImage = item.ogImage && !ogErr;
+  const showFullOgImage = item.ogImageFit === 'contain';
 
   return (
     <motion.a
@@ -93,7 +94,12 @@ const BrowserCard: React.FC<{ item: typeof showcase[0]; large?: boolean }> = ({ 
             <img
               src={item.ogImage}
               alt={item.ogTitle}
-              className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              className={`w-full h-full object-center transition-transform duration-700 ease-out ${
+                showFullOgImage
+                  ? 'object-contain p-2 bg-[#f8fafc] dark:bg-[#0f1117] group-hover:scale-[1.01]'
+                  : 'object-cover group-hover:scale-[1.04]'
+              }`}
+              style={!showFullOgImage ? { objectPosition: item.ogImagePosition || 'center' } : undefined}
               onError={() => setOgErr(true)}
               loading="lazy"
             />

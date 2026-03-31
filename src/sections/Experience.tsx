@@ -6,9 +6,9 @@ import { experience } from '../data/experience';
 // #9 — Company favicons/logos instead of generic Building2 icon
 const companyLogos: Record<string, { favicon?: string; color: string; letter: string }> = {
   'PostGame AI': { favicon: 'https://www.getpostgame.ai/apple-touch-icon.png', color: '#2563eb', letter: 'P' },
-  'Soar (AI Technology Startup)': { color: '#0f172a', letter: 'S' },
-  'Utah Innovation Fund': { color: '#16a34a', letter: 'U' },
-  'Brandless (Healthcare Technology)': { color: '#7c3aed', letter: 'B' },
+  'Soar (AI Technology Startup)': { favicon: 'https://unicorn-images.b-cdn.net/64b42c7b-12b4-4495-8937-86e188202472?optimizer=gif', color: '#0f172a', letter: 'S' },
+  'Utah Innovation Fund': { favicon: 'https://images.squarespace-cdn.com/content/v1/68bf0fd2ec85ff3e346927e5/c29a04d4-e668-4a4f-bfbe-29eb38810cdb/favicon.ico?format=100w', color: '#16a34a', letter: 'U' },
+  'Brandless (Healthcare Technology)': { favicon: '/brandless-logo.png', color: '#7c3aed', letter: 'B' },
 };
 
 const CompanyIcon: React.FC<{ company: string; isCurrent: boolean }> = ({ company, isCurrent }) => {

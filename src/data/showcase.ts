@@ -7,6 +7,8 @@ export interface ShowcaseItem {
   ogTitle: string;
   ogDescription: string;
   ogImage?: string;
+  ogImageFit?: 'cover' | 'contain';
+  ogImagePosition?: string;
   favicon?: string;
   status: 'live' | 'beta' | 'coming-soon';
   category: ShowcaseCategory;
@@ -35,6 +37,20 @@ export const showcase: ShowcaseItem[] = [
     category: "saas",
     color: "#2563eb",
     tech: ["Next.js", "OpenAI", "Supabase", "Stripe"],
+    featured: true,
+  },
+  {
+    name: "airadr",
+    tagline: "AI search optimization platform",
+    url: "https://ai-radr.com",
+    ogTitle: "airadr - AI Search Optimization",
+    ogDescription: "Shows how AI engines find and recommend your business with a 30-second audit, visibility scoring, and prioritized technical fixes.",
+    ogImage: "https://www.ai-radr.com/og-image.png",
+    favicon: "https://ai-radr.com/icon.svg?icon.9e2d7df7.svg",
+    status: "live",
+    category: "saas",
+    color: "#0f172a",
+    tech: ["Next.js", "AI Search", "Monitoring", "Analytics"],
     featured: true,
   },
   {
@@ -131,10 +147,13 @@ export const showcase: ShowcaseItem[] = [
   {
     name: "SheTech",
     tagline: "STEM conference platform",
-    url: "https://shetech-amber.vercel.app",
+    url: "https://www.shetechexplorer.com",
     ogTitle: "SheTech Explorer - Empowering Girls in STEM",
     ogDescription: "Utah's largest hands-on STEM experience. Join thousands of high school girls, mentors, and tech companies for interactive workshops and real-world challenges.",
-    favicon: "https://shetech-amber.vercel.app/favicon.ico",
+    ogImage: "https://www.shetechexplorer.com/shetech-assets/Home%20Hero%20Mobile.jpg",
+    ogImageFit: "cover",
+    ogImagePosition: "center 16%",
+    favicon: "https://www.shetechexplorer.com/logo.png",
     status: "live",
     category: "client",
     color: "#db2777",

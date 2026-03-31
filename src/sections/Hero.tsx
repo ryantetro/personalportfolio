@@ -59,7 +59,7 @@ const Hero: React.FC = () => {
               </h1>
 
               <p className="max-w-[520px] text-[#6b7280] dark:text-[#9ca3af] text-base leading-relaxed mb-8">
-                Software engineer and startup founder shipping AI-powered products from zero to one. Currently building PostGame AI and engineering at Soar.
+                Software engineer, startup founder, collegiate athlete, and national champion shipping AI-powered products from zero to one. Currently building PostGame AI and winner of an entrepreneur pitch award.
               </p>
 
               <div className="flex flex-wrap items-center gap-3 mb-6">
@@ -75,8 +75,8 @@ const Hero: React.FC = () => {
                 </MagneticButton>
                 <MagneticButton>
                   <a
-                    href="/Ryan_Tetro_Resume.pdf"
-                    download
+                    href="/Ryan%20Tetro%20Resume.docx"
+                    download="Ryan Tetro Resume.docx"
                     className="btn-ghost inline-flex items-center gap-2 dark:text-[#f1f5f9] dark:border-white/[0.12] dark:hover:bg-[#161922]"
                   >
                     <Download size={14} /> Resume

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryan Tetro — Resume</title>
+  <style>
+    /* Word-like defaults: Calibri 11pt, ~single spacing, 1" margins (US Letter) */
+    :root {
+      --ink: #000000;
+      --rule: #000000;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body {
+      font-family: Calibri, "Calibri Light", "Helvetica Neue", Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.15;
+      color: var(--ink);
+      max-width: 8.5in;
+      margin: 0 auto;
+      padding: 0;
+    }
+    /* OOXML Heading1: after ~200 twips (~10pt); line ~1.2 */
+    @page {
+      size: letter;
+      margin: 1in;
+    }
+    @media print {
+      body { font-size: 11pt; line-height: 1.15; }
+      a { color: var(--ink); text-decoration: none; }
+      .no-print { display: none; }
+    }
+    /* Subtitle / contact block: tight like Word */
+    .name {
+      font-size: 16pt;
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0 0 6pt 0;
+    }
+    .contact-block {
+      font-size: 11pt;
+      line-height: 1.15;
+      margin-bottom: 10pt;
+    }
+    .contact-block p { margin: 0 0 2pt 0; }
+    .contact-block a { color: var(--ink); text-decoration: none; }
+    /* Section: ALL CAPS + space after (~10pt bottom) */
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin: 12pt 0 10pt 0;
+      padding: 0;
+      border: none;
+    }
+    h2:first-of-type {
+      margin-top: 0;
+    }
+    /* Education: date / degree pattern */
+    .edu-item {
+      margin-bottom: 8pt;
+      break-inside: avoid;
+    }
+    .edu-item .row-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8pt;
+      font-weight: 700;
+    }
+    .edu-item .date { font-weight: 700; white-space: nowrap; }
+    .edu-item .detail { margin-top: 2pt; }
+    .edu-item .place { font-style: italic; margin-top: 1pt; }
+    /* Jobs */
+    .job {
+      margin-bottom: 10pt;
+      break-inside: avoid;
+    }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10pt;
+      font-weight: 700;
+      line-height: 1.15;
+    }
+    .job-head .dates { white-space: nowrap; font-weight: 700; }
+    .job-head .title-line { flex: 1; min-width: 0; }
+    .job .location {
+      font-weight: 400;
+      font-style: italic;
+      margin-top: 2pt;
+      font-size: 11pt;
+    }
+    .job ul {
+      margin: 4pt 0 0 0;
+      padding-left: 0.35in;
+      list-style-type: disc;
+    }
+    .job li {
+      margin-bottom: 2pt;
+      line-height: 1.15;
+    }
+    /* Leadership */
+    .lead-item {
+      margin-bottom: 10pt;
+      break-inside: avoid;
+    }
+    .lead-item .lead-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10pt;
+      font-weight: 700;
+    }
+    .lead-item .lead-head .dates { white-space: nowrap; }
+    .lead-item .meta {
+      font-weight: 700;
+      margin-top: 2pt;
+    }
+    .lead-item .place { font-style: italic; margin-top: 1pt; }
+    .lead-item ul {
+      margin: 4pt 0 0 0;
+      padding-left: 0.35in;
+      list-style-type: disc;
+    }
+    .lead-item li { margin-bottom: 2pt; line-height: 1.15; }
+    /* Skills table — two columns like Word */
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11pt;
+      line-height: 1.15;
+    }
+    .skills-table td {
+      padding: 1pt 8pt 3pt 0;
+      vertical-align: top;
+    }
+    .skills-table td:last-child {
+      width: 4.5em;
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .languages ul {
+      margin: 0;
+      padding-left: 0.35in;
+      list-style-type: disc;
+    }
+    .languages li { line-height: 1.15; }
+    footer.no-print {
+      margin-top: 14pt;
+      font-size: 9pt;
+      color: #444;
+    }
+  </style>
+  <!-- Intentionally no web fonts — closer to Word print -->
+</head>
+<body>
+  <p class="name">Ryan Tetro</p>
+  <div class="contact-block">
+    <p>Cedar Hills, Utah, United States, 8013610618,</p>
+    <p><a href="mailto:ryantetro@gmail.com">ryantetro@gmail.com</a></p>
+    <p><a href="https://www.linkedin.com/in/ryan-tetro/">LinkedIn</a></p>
+  </div>
+
+  <h2>Education</h2>
+
+  <div class="edu-item">
+    <div class="row-top">
+      <span class="date">Apr&nbsp;2026</span>
+      <span class="detail">Master of Science, Information Systems, Brigham Young University - Marriott School of Business</span>
+    </div>
+    <p class="place">Provo</p>
+  </div>
+  <div class="edu-item">
+    <div class="row-top">
+      <span class="date">Apr&nbsp;2025</span>
+      <span class="detail">Bachelor of Science, Information Systems, Brigham Young University - Marriott School of Business</span>
+    </div>
+    <p class="place">Provo</p>
+  </div>
+  <div class="edu-item">
+    <div class="row-top">
+      <span class="date">Apr&nbsp;2026</span>
+      <span class="detail">Sandbox Fellowship — Startup Incubator Program, Brigham Young University</span>
+    </div>
+    <p class="place">Provo</p>
+  </div>
+
+  <h2>Employment history</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Sept 2025 — Present</span>
+      <span class="title-line">Founder &amp; Software Engineer, PostGame AI</span>
+    </div>
+    <p class="location">Provo</p>
+    <ul>
+      <li>Architected and built an AI-powered coaching platform enabling coaches to send audio feedback and athletes to receive AI-generated insights and performance summaries</li>
+      <li>Developed full-stack application using Next.js, React, Supabase, and PostgreSQL supporting authentication, data storage, and scalable user workflows</li>
+      <li>Implemented AI pipelines using OpenAI APIs to transcribe, analyze, and generate structured feedback from coach audio recordings</li>
+      <li>Designed backend infrastructure and APIs to handle audio processing, transcript storage, and real-time AI analysis</li>
+      <li>Led product development from concept to deployment, including system architecture, feature design, and implementation</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Jan 2025 — Present</span>
+      <span class="title-line">Software Engineer, Soar (AI Technology Startup)</span>
+    </div>
+    <p class="location">Provo</p>
+    <ul>
+      <li>Built a production AI-powered lead generation platform using Next.js, AWS Lambda, DynamoDB, and Pinecone vector database</li>
+      <li>Implemented semantic search pipelines using OpenAI embeddings and vector similarity search to improve lead targeting</li>
+      <li>Developed scalable serverless backend infrastructure and REST APIs to support real-time data processing and AI workflows</li>
+      <li>Designed database architecture and backend systems supporting production deployment and multi-user workflows</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Feb 2024 — Jan 2025</span>
+      <span class="title-line">Data Engineer, Soar (AI technology start-up)</span>
+    </div>
+    <p class="location">Provo</p>
+    <ul>
+      <li>Develop data AI models that use gen AI to take real-time information, existing information and provide AI analysis, insights and actions to users</li>
+      <li>Engineer, in Python, ML modules that customers use daily</li>
+      <li>Work with key customers to create AI modules that can be repeatably used inside organizations to train, inform and change user behavior</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Dec 2023 — Present</span>
+      <span class="title-line">Investment Analyst, Utah Innovation Fund (Investment Fund)</span>
+    </div>
+    <p class="location">Salt Lake City</p>
+    <ul>
+      <li>Analyze and evaluate investment opportunities, successfully identifying high-potential startups focused in deep tech and life sciences sectors</li>
+      <li>Develop financial models and forecasts for potential investments, providing risk assessments and market analysis that informed the fund's investment strategies</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Oct 2022 — Oct 2023</span>
+      <span class="title-line">Senior Data Associate, Brandless (Healthcare technology start-up)</span>
+    </div>
+    <p class="location">Lindon</p>
+    <ul>
+      <li>Create data dashboards in Sigma to help the business make critical day to day decisions</li>
+      <li>Work with the data and insights team to structure and represent information to the CEO and executives in the company</li>
+      <li>Work on strategies for how data can be used to continue to grow the business</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Mar 2021 — Oct 2022</span>
+      <span class="title-line">M&amp;A Associate, Brandless (Healthcare technology start-up)</span>
+    </div>
+    <ul>
+      <li>Source potential acquisitions targets</li>
+      <li>Qualify opportunities by presenting to customers and entrepreneurs</li>
+      <li>Consistently met quota for lead, qualification and opportunities for the company resulting in helping drive the growth of the company 1400%</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Nov 2020 — Mar 2021</span>
+      <span class="title-line">Business Development Representative, GlassFrogg (Healthcare technology start-up)</span>
+    </div>
+    <p class="location">Provo</p>
+    <ul>
+      <li>Worked with a cross-functional team to identify target customer, determine the customer journey and drive</li>
+      <li>Increased revenue 100% monthly through cold calls, lead generation and company presentations</li>
+      <li>Provided customer insight for the product development team, customer support team and management to help customer acquisition through relationships improve customer experience</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">Oct 2020 — Present</span>
+      <span class="title-line">Co-founder &amp; Partner, SurfMongers (Wake surf start-up)</span>
+    </div>
+    <ul>
+      <li>Developed a light up wake surf product line to create a visible surf experience for surf enthusiast, this included sourcing materials, developing prototypes, testing products</li>
+      <li>Built a go-to-market strategy for the product launch, fundraising and influencer campaigns</li>
+      <li>Created a crowdfunding campaign, that is just about to start, to fund the first product releases</li>
+      <li>Structured a company with partners and investors to support the launch and growth</li>
+      <li>Worked with key business mentors to develop and build the company from the ground</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">May 2019 — Present</span>
+      <span class="title-line">Youth Leader and Soccer Coach, BYU Soccer Youth Program Coach (University)</span>
+    </div>
+    <p class="location">Provo</p>
+    <ul>
+      <li>Worked with youth teams through soccer skills and leadership activities</li>
+      <li>Led my teams to two championship outcomes over the course of the summer</li>
+      <li>Helped youth learn about soccer, life skills and how to work with others</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <span class="dates">May 2018 — Aug 2018</span>
+      <span class="title-line">Tech Entrepreneur Apprentice, Album VC (Tech Apprenticeship program)</span>
+    </div>
+    <p class="location">Lehi</p>
+    <ul>
+      <li>Worked with over 20 tech entrepreneurs to learn customer validation, market sizing, fundraising, customer service, leadership, team development, product development and testing</li>
+      <li>Worked on projects to help build and validation technology ideas that could develop into a start up</li>
+      <li>Worked with a venture capital company in Silicon Slopes to develop skills to help build tech companies</li>
+    </ul>
+  </div>
+
+  <h2>Leadership &amp; service</h2>
+
+  <div class="lead-item">
+    <div class="lead-head">
+      <span class="dates">2021 — Present</span>
+      <span>BYU Soccer Team — Player</span>
+    </div>
+    <ul>
+      <li>Won national championships 5 years in a row, 2021, 2022, 2023, 2024, and 2025</li>
+    </ul>
+  </div>
+
+  <div class="lead-item">
+    <div class="lead-head">
+      <span class="dates">2015 — 2019</span>
+      <span>Team Captain (LaRoca Soccer Team &amp; AF High School Team)</span>
+    </div>
+    <p class="place">Provo, UT</p>
+    <ul>
+      <li>Team Captain</li>
+      <li>Led our team to Regionals</li>
+      <li>Drove player and team performance in the DPL soccer league</li>
+      <li>Led 40 high school students to 3 years in regionals and top 5 in state</li>
+    </ul>
+  </div>
+
+  <div class="lead-item">
+    <div class="lead-head">
+      <span class="dates">2019 — 2020</span>
+      <span>The Church of Jesus Christ of Latter-day Saints</span>
+    </div>
+    <p class="place">Quito, Ecuador</p>
+    <p class="meta">Volunteer Representative</p>
+    <ul>
+      <li>Selected to serve in leadership position responsible for the training and performance of volunteers</li>
+      <li>Tripled the statistical success in assigned area for 6 consecutive months through exceptional time management</li>
+    </ul>
+  </div>
+
+  <h2>Awards &amp; skills</h2>
+  <table class="skills-table">
+    <tr><td>Spanish: Proficient working ability</td><td>Expert</td></tr>
+    <tr><td>Scrum Master Certified</td><td>Expert</td></tr>
+    <tr><td>Project management</td><td>Expert</td></tr>
+    <tr><td>Agile Development training</td><td>Expert</td></tr>
+    <tr><td>User Interface Design</td><td>Expert</td></tr>
+    <tr><td>Figma</td><td>Expert</td></tr>
+    <tr><td>Customer Research</td><td>Expert</td></tr>
+    <tr><td>Unified Modeling Language (UML)</td><td>Expert</td></tr>
+    <tr><td>Proficient in SQL</td><td>Expert</td></tr>
+    <tr><td>MySQL</td><td>Expert</td></tr>
+    <tr><td>Data Exploratory analysis in Python</td><td>Expert</td></tr>
+    <tr><td>Creation and Deployment of dashboards in Python</td><td>Expert</td></tr>
+    <tr><td>JavaScript/Node/Express</td><td>Expert</td></tr>
+    <tr><td>PostgreSQL</td><td>Expert</td></tr>
+    <tr><td>Full-Stack Programming using ASP.net Core MVC / C#</td><td>Expert</td></tr>
+    <tr><td>API &amp; SPA Development</td><td>Expert</td></tr>
+    <tr><td>JQuery</td><td>Expert</td></tr>
+    <tr><td>React</td><td>Expert</td></tr>
+    <tr><td>SQLite</td><td>Expert</td></tr>
+    <tr><td>Linux Proficiency</td><td>Expert</td></tr>
+    <tr><td>Encryption/Decryption Techniques</td><td>Expert</td></tr>
+    <tr><td>Web server security</td><td>Expert</td></tr>
+    <tr><td>Digital Signatures</td><td>Expert</td></tr>
+    <tr><td>Use of SSH</td><td>Expert</td></tr>
+    <tr><td>password Managers</td><td>Expert</td></tr>
+  </table>
+
+  <h2>Languages</h2>
+  <div class="languages">
+    <ul>
+      <li>Spanish: Proficient working ability</li>
+    </ul>
+  </div>
+
+  <footer class="no-print">
+    Editable source: <code>resume/Ryan_Tetro_Resume.md</code> · Print or Save as PDF (Letter, 1&quot; margins).
+  </footer>
+</body>
+</html>
